@@ -3,9 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+        <style type="text/css">
+        .aa {
+            background-image: url("images/pic02.jpg");
+        }
+        
+        </style>
+        {% endblock %}
     </head>
-    <body>
+    <body id="top">
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Take Your Gift!{% endblock %}
+
+{% block body %}
+
+			<!-- Banner -->
+			<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+				<section id="banner" class="aa" >
+					<div class="inner">
+						<header>
+							<h1>Your Lucky Day<span style='font-size:75px;'>&#128526;</span>!</h1>
+							<p>Find out how millions of users earn gift cards<br />
+							 in their favorite stores like PlayStation, Google Play, Amazon and App Store</p>
+						</header>
+						<a href="#main" class="more">Learn More</a>
+					</div>
+				</section>
+
+			<!-- Main -->
+				<div id="main">
+					<div class="inner">
+
+					<!-- Boxes -->
+						<div class="thumbnails">
+
+
+                        {% for produit in produits %}
+							<div class="box">
+								<a href="{{produit.path}} " target="_blank" class="image fit"><img src="{{ '/uploads/' ~ produit.image }} " alt="" /></a>
+								<div class="inner">
+									<h3>{{produit.titre}}</h3>
+									<p>{{produit.description}} </p>
+									<a href="{{produit.path}} " target="_blank" class="button style3 fit" data-poptrox="youtube,800x400">Get Your Gift Card</a>
+								</div>
+							</div>
+                            {% endfor %}
+
+
+
+
+
+						</div>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<h2>Be Positive <span style='font-size:75px;'>&#127808;</span></h2>
+						<p>Find out how millions of users earn gift cards<br />
+							 in their favorite stores like PlayStation, Google Play, Amazon and App Store</p>
+
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						
+					</div>
+				</footer>
+{% endblock %}
+{% block javascripts %}
+			
+			<script src="{{ asset('assets/js/main.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,25 @@
+easy_admin:
+    site_name: 'Your-Lucky-Day'
+    entities:
+#        # List the entity class name you want to manage
+#        - App\Entity\Produit
+        Produits:
+            list:
+                fields:
+                    # ...
+                    - id
+                    - titre
+                    - description
+                    - image
+                    - path
+            class: App\Entity\Produit
+            label: "Produit"
+            form: 
+                fields:
+                    - {type: 'group',icon: 'pencil',label: 'ajouter un Produit'}
+                    - titre
+                    - description
+                    - { property: 'contractFile', type: 'vich_file' , label: 'Choisir le fichier' }
+                    - path
+#        - App\Entity\Category
+#        - App\Entity\User
